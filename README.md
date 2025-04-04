@@ -1,2 +1,3 @@
-# RKSTDC
- RingKai(苓茶/LingCha) Standard Compression.
+# 苓茶标准压缩
+
+此仓库为苓茶(LingCha/LC/RingKai/RK)项目的一部分，被使用于苓茶内核以及其他项目，仅进行不完整开源。
