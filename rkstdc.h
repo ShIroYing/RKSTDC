@@ -19,7 +19,7 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 
-#if defined(__GNUC__)
+#ifdef __GNUC__
 #define RKSTDC_INLINE __attribute__((always_inline)) inline
 #elif defined(_MSC_VER)
 #define RKSTDC_INLINE __forceinline
@@ -28,7 +28,7 @@ extern "C" {
 #endif
 
 RKSTDC_INLINE static void *_rkstdc_memcpy(void *dst, const void *src, size_t size) {
-#if defined(__GNUC__)
+#ifdef __GNUC__
     return __builtin_memcpy(dst, src, size);
 #endif
     return memcpy(dst, src, size);
