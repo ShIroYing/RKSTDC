@@ -80,7 +80,7 @@ RKSTDC_INLINE ssize_t rkstdc_rkrle_encode(const uint8_t *in, size_t in_len, uint
     return out_idx;
 }
 
-ssize_t rkstdc_rkrle_decode(const uint8_t *in, size_t in_len, uint8_t **out) {
+RKSTDC_INLINE ssize_t rkstdc_rkrle_decode(const uint8_t *in, size_t in_len, uint8_t **out) {
     if (in == NULL || in_len == 0) return -1;
     size_t in_idx = 0, out_idx = 0;
     do *out = (uint8_t *)malloc(in_len);
