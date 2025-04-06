@@ -1,7 +1,7 @@
 //================================================================================================================
 // Copyright (c) 2023-present Anne Sakitin (Tianwan Ayana).                                                      =
 //                                                                                                               =
-// Part of the RK project.                                                                                      =
+// Part of the RK project.                                                                                       =
 // Licensed under the F2DLPR License.                                                                            =
 //                                                                                                               =
 // YOU MAY NOT USE THIS FILE EXCEPT IN COMPLIANCE WITH THE LICENSE.                                              =
