@@ -1,5 +1,5 @@
 //====================================================================================================
-// Copyright (C) 2016-present ShIroRRen.                                                             =
+// Copyright (C) 2016-present ShIroRRen <http://shiror.ren>.                                         =
 //                                                                                                   =
 // Part of the RK project.                                                                           =
 // Licensed under the F2DLPR License.                                                                =
@@ -8,7 +8,7 @@
 // Provided "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,                                   =
 // unless required by applicable law or agreed to in writing.                                        =
 //                                                                                                   =
-// For details about the F2DLPR License terms and conditions, visit: http://license.fileto.download. =
+// For the F2DLPR License terms and conditions, visit: <http://license.fileto.download>.             =
 //====================================================================================================
 
 #ifdef __cplusplus
