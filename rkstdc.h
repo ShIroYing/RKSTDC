@@ -48,19 +48,19 @@ RKSTDC_INLINE ssize_t rkstdc_rkrle_encode(uint8_t const* in, size_t in_len, uint
 				do *out = (uint8_t*)realloc(*out, out_idx + 3);
 				while (*out == NULL);
 			}
-			(*out)[out_idx++] = (uint8_t)'Y';
-			(*out)[out_idx++] = rpt_num;
-			(*out)[out_idx++] = in[in_idx];
-			in_idx += rpt_num;
+			(*out)[out_idx++]  = (uint8_t)'Y';
+			(*out)[out_idx++]  = rpt_num;
+			(*out)[out_idx++]  = in[in_idx];
+			in_idx			  += rpt_num;
 		} else {
 			uint8_t nrpt_num = rpt_num;
 			while (in_idx + nrpt_num + 2 < in_len && nrpt_num < UINT8_MAX
-				   && ((in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 1]
-						&& in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 2])
-					   || (in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 1]
-						   && in[in_idx + nrpt_num] == in[in_idx + nrpt_num + 2])
-					   || (in[in_idx + nrpt_num] == in[in_idx + nrpt_num + 1]
-						   && in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 2])))
+					&& ((in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 1]
+								&& in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 2])
+							|| (in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 1]
+									&& in[in_idx + nrpt_num] == in[in_idx + nrpt_num + 2])
+							|| (in[in_idx + nrpt_num] == in[in_idx + nrpt_num + 1]
+									&& in[in_idx + nrpt_num] != in[in_idx + nrpt_num + 2])))
 				++nrpt_num;
 			if (in_idx + nrpt_num + 2 == in_len && nrpt_num + 2 < UINT8_MAX) nrpt_num += 2;
 			else if (in_idx + nrpt_num + 1 == in_len && nrpt_num + 1 < UINT8_MAX) ++nrpt_num;
@@ -71,7 +71,7 @@ RKSTDC_INLINE ssize_t rkstdc_rkrle_encode(uint8_t const* in, size_t in_len, uint
 			(*out)[out_idx++] = nrpt_num;
 			_rkstdc_memcpy(*out + out_idx, in + in_idx, nrpt_num);
 			out_idx += nrpt_num;
-			in_idx += nrpt_num;
+			in_idx	+= nrpt_num;
 		}
 	}
 	do *out = (uint8_t*)realloc(*out, out_idx);
@@ -100,7 +100,7 @@ RKSTDC_INLINE ssize_t rkstdc_rkrle_decode(uint8_t const* in, size_t in_len, uint
 			case 'n':
 			case 'N':
 				_rkstdc_memcpy(*out + out_idx, in + in_idx, length);
-				in_idx += length;
+				in_idx	+= length;
 				out_idx += length;
 				break;
 			default: return -1;
