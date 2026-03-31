@@ -41,8 +41,7 @@ RKSTDC_INLINE ssize_t rkstdc_rkrle_encode(uint8_t const* in, size_t in_len, uint
 	while (*out == NULL);
 	while (in_idx < in_len) {
 		uint8_t rpt_num = 1;
-		while (in_idx + rpt_num < in_len && in[in_idx] == in[in_idx + rpt_num] && rpt_num < UINT8_MAX)
-			++rpt_num;
+		while (in_idx + rpt_num < in_len && in[in_idx] == in[in_idx + rpt_num] && rpt_num < UINT8_MAX) ++rpt_num;
 		if (rpt_num > 2) {
 			if (out_idx + 3 > in_len) {
 				do *out = (uint8_t*)realloc(*out, out_idx + 3);
